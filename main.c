@@ -1,21 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-//실습3-2
-//call by reference
+//실습4
 
-void swap (int *x, int *y){
-	int temp;
+#include <stdio.h>
+int main(void)
+{
+	int i;
+	int grade[5];
+	int average=0;
 	
-	temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
-int main(void){
-	int a = 3;
-	int b = 5;
-	swap(&a, &b);   //'swap(&a, &b);는 주소에 의한 참조를 사용하여 a와 b의 값을 서로 교환하는 함수 호출
-	printf("a:%i, b:%i\n", a, b);
+	for (i=0;i<5;i++)
+	{
+		printf("input value [%i] = ", i);
+		scanf("%d", &grade[i]);
+	}
 	
+	for (i=0;i<5;i++)
+	{
+		printf("grade[%i] = %i\n", i, grade[i]);
+		average = average + *(grade+i);
+	}
+	
+	printf("average = %i\n", average / 5);
+	
+	system("PAUSE");
 	return 0;
 }
