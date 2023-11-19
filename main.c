@@ -2,7 +2,6 @@
 #include <stdlib.h>
 //실습4
 
-#include <stdio.h>
 int main(void)
 {
 	int i;
